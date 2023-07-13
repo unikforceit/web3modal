@@ -2,19 +2,21 @@ import {
   EthereumClient,
   w3mConnectors,
   w3mProvider,
-  WagmiCore,
   WagmiCoreChains,
+  WagmiCore
 } from "https://unpkg.com/@web3modal/ethereum";
 
 import { Web3Modal } from "https://unpkg.com/@web3modal/html";
 
+//import { configureChains, createConfig, getAccount, readContract } from "https://unpkg.com/@wagmi/core";
+
 import { nft } from "./abi.js";
 
 // Equivalent to importing from @wagmi/core
-const { configureChains, createConfig, getAccount, readContract } = WagmiCore;
+const { configureChains, createConfig, getAccount, readContract } = WagmiCore
 
-// Equivalent to importing from @wagmi/core/chains
-const { mainnet } = WagmiCoreChains;
+ // Equivalent to importing from @wagmi/core/chains
+ const { mainnet } = WagmiCoreChains
 
 const chains = [mainnet];
 const projectId = "210b371a0406d0aa02a6c3a56fb9dda5";
@@ -74,7 +76,6 @@ let accounts = await getAccount();
 //   console.log(Number(toxic));
 //   console.log(Number(som));
 // });
-
 $(document).ready(function() {
   function showOverlayText() {
     if (accounts?.isConnected) {
