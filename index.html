@@ -4,19 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+  
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+  
+      .button {
+        padding: 12px 24px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      .button:hover {
+        background-color: #45a049;
+      }
+  
+      #notice-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: none;
+      }
+  
+      #notice {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: white;
+          padding: 20px;
+          border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
-    <div id="overlay">
-      <div id="overlay-text">
-        You have <span id="tsc-nft"></span> TSC Token in your balance <br/>
-        You have <span id="som-nft"></span> SOM Token in your balance
+    <div id="notice-overlay">
+      <div id="notice"></div>
+  </div>
+      <div id="container">
+        <h1>MetaMask WalletConnect Example</h1>
+        <button id="connectButton" class="button">Connect with MetaMask</button>
+        <button id="check-balance" style="display: none;">Check Balance</button>
+        <button id="disconnectButton" class="button" style="display: none;">Disconnect</button>
       </div>
-    </div>
-    <button id="wallet-connect-button" class="wallet-connect-button-header">🦊 Connect Wallet</button>
-    <w3m-core-button></w3m-core-button>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" type="module"></script>
   </body>
 </html>
